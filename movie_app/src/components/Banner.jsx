@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Movies from './TMDB_API/Movies';
-import SimpleSlider from './MoviesCarousel';
+import MoviesCarousel from './MoviesCarousel';
 import '../styles/banner.css'
 
 const InfoBannerMovie = (props) => {
@@ -68,7 +68,7 @@ const Banner = (props) => {
                     {props.children}
                     <Movies url='https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1' setData={setBannerMovie} />
                     <InfoBannerMovie movie={bannerMovie[0]} />
-                    <SimpleSlider title='Populaires' moviesList={bannerMovie} />
+                    <MoviesCarousel title='Populaires' moviesList={bannerMovie} />
                 </div>
             }
         </section >

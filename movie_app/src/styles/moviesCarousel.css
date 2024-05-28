@@ -1,6 +1,11 @@
 .carousel-title {
   font-size: x-large;
+  color: white;
+  margin: 0px;
+  padding: 35px 35px;
 }
+
 .movie-card img {
-  margin: auto; /* Magic! */
+  margin: auto;
+  border-radius: 5px;
 }

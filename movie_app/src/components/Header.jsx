@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SideMenu from './SideMenu';
 import '../styles/header.css'
 
 function Header() {
@@ -10,7 +11,8 @@ function Header() {
 
     return (
         <header className='horizontal-alignment'>
-            <div>
+            <div className='horizontal-alignment'>
+                <SideMenu />
                 <h1>
                     FilmTV
                 </h1>

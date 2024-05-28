@@ -1,0 +1,27 @@
+.side-menu-button {
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.7s, transform 0.7s;
+}
+
+.side-menu-button:hover {
+  transform: scale(1.1);
+}
+.side-menu {
+  background-color: #403f3f;
+  height: 100vh;
+  width: 25%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  color: white;
+}
+
+.genre-title {
+  font-size: x-large;
+}
+
+.genres-list {
+  list-style-type: none;
+}
