@@ -1,0 +1,17 @@
+header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px;
+}
+/*search bar*/
+.search-bar {
+  border: 1px solid black;
+  padding: 8px 8px;
+  border-radius: 8px;
+  flex-wrap: nowrap;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+}
