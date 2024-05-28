@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Movies from './TMDB_API/Movies';
+import SimpleSlider from './MoviesCarousel';
 import '../styles/banner.css'
 
 const InfoBannerMovie = (props) => {
@@ -49,7 +50,7 @@ const Banner = (props) => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.1), #181818), url(https://image.tmdb.org/t/p/original/${bannerMovie[0].backdrop_path})`,
+                backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 0, 0), #181818), url(https://image.tmdb.org/t/p/original/${bannerMovie[0].backdrop_path})`,
             });
         }
     }, [bannerMovie]);
@@ -61,12 +62,13 @@ const Banner = (props) => {
     }
 
     return (
-        <section id='banner' style={backgroundImageStyle}>
+        <section style={backgroundImageStyle}>
             {bannerMovie &&
-                <div>
+                <div id='banner'>
                     {props.children}
                     <Movies url='https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1' setData={setBannerMovie} />
                     <InfoBannerMovie movie={bannerMovie[0]} />
+                    <SimpleSlider title='Populaires' moviesList={bannerMovie} />
                 </div>
             }
         </section >

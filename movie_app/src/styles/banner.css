@@ -1,6 +1,9 @@
 /*INFO BANNER MOVIE*/
 #banner {
   padding: 5px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 /*text*/
 .title-movie-banner {
