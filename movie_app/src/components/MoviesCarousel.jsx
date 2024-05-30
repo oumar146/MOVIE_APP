@@ -1,4 +1,6 @@
 import Slider from "react-slick";
+import { NavLink } from 'react-router-dom';
+
 import '../styles/moviesCarousel.css'
 const MoviesCarousel = (props) => {
     const settings = {
@@ -46,18 +48,19 @@ const MoviesCarousel = (props) => {
                     </div>
                     <Slider {...settings} className="carousel">
                         {props.moviesList.map((movie) => (movie.poster_path &&
-                            <div key={movie.id} className="movie-card">
+                            <NavLink key={movie.id} className="movie-card" onClick={() => window.scrollTo(0, 0)}
+                                to={`/PageMovie/${movie.id}`} >
                                 <img
                                     src={`https://image.tmdb.org/t/p//w300/${movie.poster_path}`}
                                     alt=""
                                     title=""
                                 />
-                            </div>
+                            </NavLink>
                         ))}
                     </Slider>
-                </div>
+                </div >
             )}
-        </div>
+        </div >
     );
 }
 
