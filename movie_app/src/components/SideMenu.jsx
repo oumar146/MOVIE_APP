@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MovieGenres from './TMDB_API/MovieGenres';
 import '../styles/sideMenu.css'
+import { NavLink } from 'react-router-dom';
 
 const GenresList = (props) => {
 
@@ -15,8 +16,11 @@ const GenresList = (props) => {
                     <ul className='genres-list'>
                         {listGenres.map((genre) => (
                             <li key={genre.id} onClick={() => (props.setShow(false), window.scrollTo(0, 0))}>
-
-                                {genre.name}
+                                <NavLink className='navlink'
+                                    to={`/movie-by-genre/${genre.name}/${genre.id}`}
+                                >
+                                    {genre.name}
+                                </NavLink>
                             </li>))}
                     </ul>
 
