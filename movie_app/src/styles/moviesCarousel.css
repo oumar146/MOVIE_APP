@@ -5,18 +5,11 @@
   padding: 35px 35px;
 }
 
-.movie-card img {
+.card img {
   margin: auto;
   border-radius: 3px;
 }
 
-/**flèches**/
-/*.slick-slide > div {
-  margin: 0 8px;
-}
-.slick-list {
-  margin: 0 -15px;
-}*/
 .slick-prev,
 .slick-next {
   width: 70px;

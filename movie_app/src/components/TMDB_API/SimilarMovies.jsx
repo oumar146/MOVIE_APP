@@ -18,7 +18,7 @@ const SimilarMovies = (props) => {
 
         fetch(`https://api.themoviedb.org/3/movie/${props.id}/recommendations?language=fr-FR&page=1`, options)
             .then(response => response.json())
-            .then(response => props.setData(response))
+            .then(response => props.setData(response.results))
             .catch(err => console.error(err));
 
     }, [props.id])

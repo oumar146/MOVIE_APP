@@ -48,8 +48,8 @@ const MoviesCarousel = (props) => {
                     </div>
                     <Slider {...settings} className="carousel">
                         {props.moviesList.map((movie) => (movie.poster_path &&
-                            <NavLink key={movie.id} className="movie-card" onClick={() => window.scrollTo(0, 0)}
-                                to={`/PageMovie/${movie.id}`} >
+                            <NavLink key={movie.id} className="card" onClick={() => window.scrollTo(0, 0)}
+                                to={`/movie-page/${movie.id}`} >
                                 <img
                                     src={`https://image.tmdb.org/t/p//w300/${movie.poster_path}`}
                                     alt=""
