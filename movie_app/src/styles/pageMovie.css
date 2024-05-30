@@ -1,0 +1,26 @@
+#movie-page {
+  padding: 5px 30px;
+  color: #dedede;
+}
+
+.movie-page-container {
+  align-items: flex-start;
+  gap: 5vh;
+}
+
+.movie-title {
+  font-size: 3em;
+  margin: 0px;
+  margin-bottom: 5vh;
+}
+
+.notation-and-date {
+  display: flex;
+  gap: 5px;
+  font-size: large;
+}
+
+.overview {
+  width: 100vh;
+  font-size: large;
+}
