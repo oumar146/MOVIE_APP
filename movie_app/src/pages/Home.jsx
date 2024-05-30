@@ -5,17 +5,6 @@ import Movies from '../components/TMDB_API/Movies';
 import MoviesCarousel from '../components/MoviesCarousel';
 import '../styles/pages/home.css'
 
-const NewMoviesCarousel = () => {
-    const [newMovies, setNewMovies] = useState([]);
-
-    return (
-        <div>
-            <Movies url='https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1' setData={setNewMovies} />
-            {newMovies.length > 0 && <MoviesCarousel title='Nouveautées' moviesList={newMovies} />}
-        </div>
-    );
-};
-
 const ClassicMoviesCarousel = () => {
     const [classicMovies, setClassicMovies] = useState([]);
 
