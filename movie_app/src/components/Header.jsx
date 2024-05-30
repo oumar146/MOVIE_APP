@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SideMenu from './SideMenu';
+import { NavLink } from 'react-router-dom';
 import '../styles/header.css'
 
 function Header() {
@@ -14,7 +15,9 @@ function Header() {
             <div className='horizontal-alignment'>
                 <SideMenu />
                 <h1>
-                    FilmTV
+                    <NavLink to='/home' className='navlink'>
+                        FilmTV
+                    </NavLink>
                 </h1>
             </div>
             <form onSubmit={handleSubmit} className='search-bar horizontal-alignment'>

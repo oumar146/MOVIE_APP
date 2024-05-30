@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
-<<<<<<< HEAD
 import Banner from '../components/Banner';
 import Movies from '../components/TMDB_API/Movies';
 import MoviesCarousel from '../components/MoviesCarousel';
@@ -55,20 +54,8 @@ const Home = () => {
                 <TopRatedMoviesCarousel />
                 <PopularMoviesCarousel />
             </main>
-
-=======
-import MovieByGenre from '../components/TMDB_API/MovieByGenre';
-import MovieGenres from '../components/TMDB_API/MovieGenres';
-
-function Home() {
-    const [test, setTest] = useState([])
-    return (
-        <div>
-            <Header />
-            <MovieByGenre id='12' setData={setTest} />
->>>>>>> fetaure/TMDB-API
         </div>
-    );
+    )
 }
 
 export default Home;
