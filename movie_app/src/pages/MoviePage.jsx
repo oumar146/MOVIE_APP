@@ -65,13 +65,13 @@ const Recommendations = (props) => {
             <Slider Slider {...settings}  >
                 {
                     recommendations.map((movie) => (
-                        <NavLink key={movie.id} className="card" onClick={() => window.scrollTo(0, 0)}
+                        movie.poster_path &&(<NavLink key={movie.id} className="card" onClick={() => window.scrollTo(0, 0)}
                             to={`/movie-page/${movie.id}`} >
                             <img src={`https://image.tmdb.org/t/p//w300/${movie.poster_path}`}
                                 alt={`poster du film ${movie.name}`}
                                 title={movie.name}
                             />
-                        </NavLink>
+                        </NavLink>)
                     ))
                 }
             </Slider >

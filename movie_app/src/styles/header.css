@@ -15,9 +15,10 @@ header .navlink {
 }
 /*barre de recherche*/
 .search-bar {
+  border: none;
   border: 1px solid #dedede;
   padding: 8px 8px;
-  border-radius: 8px;
+  border-radius: 4px;
   flex-wrap: nowrap;
 }
 
