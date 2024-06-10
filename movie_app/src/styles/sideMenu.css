@@ -1,15 +1,18 @@
+/*button*/
 .side-menu-button {
   background-color: transparent;
   border: none;
   color: #dedede;
 }
+
 .side-menu-button:hover {
   color: white;
   transform: scale(1.04);
 }
 
+/*menu*/
 .side-menu {
-  background-color: #43465e;
+  background-color: #1a1919;
   height: 100vh;
   width: 50vh;
   position: fixed;
@@ -21,7 +24,7 @@
   align-items: flex-start;
   padding: 15px 15px;
 }
-
+/*liste des genres*/
 .genre-title {
   font-size: xx-large;
   margin: 0px;

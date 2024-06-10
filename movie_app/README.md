@@ -1,3 +1,20 @@
+# Run this project
+
+For run this project you need to : 
+
+- create an acount in TMDB API for get a `token` and `API key`
+- create an file `config.json` in `src` folder and put your token and API key like the example :          
+```json
+{
+    {
+        "TOKEN": "YOUR_TOKEN",
+        "API_KEY_TMDB": "YOUR_API_KEY"
+    }
+} 
+```
+- do `npm install` in a terminal for install the dependences
+- do `npm start for` run a server
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

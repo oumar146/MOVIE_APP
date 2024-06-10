@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import MovieListByGenre from '../components/TMDB_API/MovieListByGenre';
 import Header from '../components/Header';
+import SearchMovies from '../components/TMDB_API/SearchMovies';
 import Snippet from '../components/Snippet';
-import '../styles/pages/moviesByGenres.css'
-
-function MoviesByGenres() {
-    const [movies, setmovies] = useState([]);
-    const { genreId, genreName } = useParams();
+import '../styles/pages/SearchedMovie.css'
+const SearchedMovie = () => {
+    const { input } = useParams();
+    const [movies, setMovies] = useState([]);
 
     if (!movies) {
         return (
@@ -16,22 +15,22 @@ function MoviesByGenres() {
     }
 
     return (
-        <div className='container'>
+        <div className='container' style={{ minHeight: '100vh' }} >
+            <SearchMovies input={input} setData={setMovies} />
             <Header />
-            <h2>Films du genre {genreName} : </h2>
-            <MovieListByGenre id={genreId} setData={setmovies} />
+            <p className='search-results'>{`Résultat pour la recherche : ${input}`}</p>
             {movies &&
                 <div className='movies'>
                     {
                         movies.map((movie) => (
                             <NavLink key={movie.id} className="card" onClick={() => window.scrollTo(0, 0)}
                                 to={`/movie-page/${movie.id}`} >
-                                <img
+                                {movie.poster_path && <img
                                     src={`https://image.tmdb.org/t/p//w300/${movie.poster_path}`}
-                                    alt={movie.title}
-                                    title={movie.title}
-                                    className='movie-space'
-                                />
+                                    alt={movie.name}
+                                    title={movie.name}
+                                    className='movie-position'
+                                />}
                             </NavLink>
                         ))
                     }
@@ -41,4 +40,8 @@ function MoviesByGenres() {
     );
 }
 
-export default MoviesByGenres;
+export default SearchedMovie;
+
+
+
+

@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import SideMenu from './SideMenu';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import '../styles/header.css'
 
 function Header() {
     const [input, setInput] = useState('');
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        navigate(`/movie-searched/${input}`);
         window.scrollTo(0, 0);
     };
 
@@ -14,7 +17,7 @@ function Header() {
         <header className='horizontal-alignment'>
             <div className='horizontal-alignment'>
                 <SideMenu />
-                <h1>
+                <h1 className='logo'>
                     <NavLink to='/home' className='navlink'>
                         FilmTV
                     </NavLink>

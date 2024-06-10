@@ -10,7 +10,7 @@
   align-items: flex-start;
   gap: 5vh;
 }
-
+/*details du film*/
 .movie-title {
   font-size: 3em;
   margin: 0px;
@@ -28,15 +28,11 @@
   font-size: large;
   margin-bottom: 8vh;
 }
-
-.actor-name {
-  text-align: center;
-}
-
+/*btn-trailer*/
 .trailer-btn {
   color: #dedede;
   text-decoration: none;
-  background-color: #131834;
+  background-color: #1a1919;
   width: 200px;
   padding: 12px 15px;
   justify-content: space-around;
@@ -56,4 +52,9 @@
 
 .trailer-btn:hover {
   background-color: rgba(43, 48, 73, 0.694);
+}
+
+/*acteurs*/
+.actor-name {
+  text-align: center;
 }

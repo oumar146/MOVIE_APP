@@ -7,7 +7,13 @@ header {
 header .navlink {
   color: #dedede;
 }
-/*search bar*/
+.logo {
+  margin-left: 3vh;
+}
+.logo span {
+  color: #1a1919;
+}
+/*barre de recherche*/
 .search-bar {
   border: 1px solid #dedede;
   padding: 8px 8px;

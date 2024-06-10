@@ -1,4 +1,4 @@
-import React, { useState, useEffect, act } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Slider from "react-slick";
@@ -6,9 +6,11 @@ import MovieDetails from '../components/TMDB_API/MovieDetails';
 import MovieActors from '../components/TMDB_API/MovieActors';
 import SimilarMovies from '../components/TMDB_API/SimilarMovies';
 import MovieVideo from '../components/TMDB_API/MovieVideo';
+import Snippet from '../components/Snippet';
 import { NavLink } from 'react-router-dom';
 import '../styles/moviePage.css'
 
+/***SIMPLE COMPONENTS */
 const Recommendations = (props) => {
     const [recommendations, setRecommendations] = useState([])
 
@@ -51,7 +53,11 @@ const Recommendations = (props) => {
         ],
     };
 
-
+    if (!recommendations) {
+        return (
+            <Snippet />
+        )
+    }
 
     return (
         <div>
@@ -62,6 +68,8 @@ const Recommendations = (props) => {
                         <NavLink key={movie.id} className="card" onClick={() => window.scrollTo(0, 0)}
                             to={`/movie-page/${movie.id}`} >
                             <img src={`https://image.tmdb.org/t/p//w300/${movie.poster_path}`}
+                                alt={`poster du film ${movie.name}`}
+                                title={movie.name}
                             />
                         </NavLink>
                     ))
@@ -113,6 +121,11 @@ const Actors = (props) => {
         ],
     };
 
+    if (!actors) {
+        return (
+            <Snippet />
+        )
+    }
 
     return (
         <div>
@@ -122,8 +135,9 @@ const Actors = (props) => {
                     actors.map((actor) => (actor.profile_path &&
                         <div key={actor.id} className="card" >
                             <img src={`https://image.tmdb.org/t/p//w300/${actor.profile_path}`}
-                                alt={`photo de l'acteur ${actor.name}`}
-                                title={`photo de l'acteur ${actor.name}`} />
+                                alt={actor.name}
+                                title={actor.name}
+                            />
                             <p className='actor-name'>{actor.character}<br /> <span>{actor.name}</span></p>
                         </div>
                     ))
@@ -147,6 +161,8 @@ const Detail = (props) => {
                     <img
                         src={`https://image.tmdb.org/t/p//w300/${props.movieDetails.poster_path}`}
                         alt={`${props.movieDetails.title}`}
+                        title={props.movieDetails.title}
+
                     />
                     <div >
                         {/***Affichage du nom */}
@@ -196,6 +212,9 @@ const TrailerButton = (props) => {
     )
 
 }
+
+
+/**COMPONENT */
 const PageMovie = () => {
     const { movieId } = useParams();
     const [movieDetails, setMovieDetails] = useState({})

@@ -11,7 +11,6 @@ const GenresList = (props) => {
             <MovieGenres setData={setListGenres} />
             {listGenres && (
                 <div>
-                    <h5 className='genre-title'>Genres</h5>
                     {/**Afficher la liste des genres*/}
                     <ul className='genres-list'>
                         {listGenres.map((genre) => (
@@ -68,6 +67,7 @@ const SideMenu = () => {
             {show &&
                 <div className="side-menu horizontal-alignment">
                     <ul>
+                        <h5 className='genre-title'>Genres</h5>
                         <GenresList setShow={setShow} />
                     </ul>
                     <CloseMenuButton handleShow={handleShow} />

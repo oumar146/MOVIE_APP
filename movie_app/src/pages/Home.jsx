@@ -3,10 +3,18 @@ import Header from '../components/Header';
 import Banner from '../components/Banner';
 import Movies from '../components/TMDB_API/Movies';
 import MoviesCarousel from '../components/MoviesCarousel';
+import Snippet from '../components/Snippet';
 import '../styles/pages/home.css'
 
+/**SIMPLE COMPONENT */
 const ClassicMoviesCarousel = () => {
     const [classicMovies, setClassicMovies] = useState([]);
+
+    if (!classicMovies) {
+        return (
+            <Snippet />
+        )
+    }
 
     return (
         <div>
@@ -19,6 +27,12 @@ const ClassicMoviesCarousel = () => {
 }
 const PopularMoviesCarousel = () => {
     const [popularMovies, setPopularMovies] = useState([]);
+
+    if (!popularMovies) {
+        return (
+            <Snippet />
+        )
+    }
 
     return (
         <div>
@@ -33,6 +47,12 @@ const PopularMoviesCarousel = () => {
 const TopRatedMoviesCarousel = () => {
     const [topRatedMovies, setTopRatedMovies] = useState([]);
 
+    if (!topRatedMovies) {
+        return (
+            <Snippet />
+        )
+    }
+
     return (
         <div>
             <Movies url='https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1' setData={setTopRatedMovies} />
@@ -42,6 +62,7 @@ const TopRatedMoviesCarousel = () => {
 
 }
 
+/******COMPOSANT */
 const Home = () => {
 
     return (
